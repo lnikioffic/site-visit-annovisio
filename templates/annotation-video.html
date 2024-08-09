@@ -1,82 +1,10 @@
 {% extends 'company-base.html' %}
 
 {% block content %}
-<h1>Аннотация видео</h1>
 <div class="videoAnnotation">
-    <div class="instrument">
-        <ul>
-            <li>
-                <button id="video-upload-button" class="custom-file-upload" title="Загрузить искодник (видео)">
-                    <img src="{{ url_for('static', path='/images/load.png') }}" alt="Загрузить видео"
-                        class="instrumentImage">
-                </button>
-                <input type="file" id="video-upload" accept="video/*" hidden>
-            </li>
-            <li>
-                <button id="startAnnotation" title="Запустить аннотирование">
-                    <img src="{{ url_for('static', path='/images/startAnnotation.png') }}" class="instrumentImage">
-                </button>
-            </li>
-            <li id="caseTargets">
-                <select name="targets" id="targets">
-                </select>
-            </li>
-            <li id="addCaseTargets">
-                <button id="addTargets" title="Добавить класс аннотирования">
-                    <img src="{{ url_for('static', path='/images/addTarget.png') }}" class="instrumentImage">
-                </button>
-            </li>
-            <li id="caseFormats">
-                <select name="formats" id="formats">
-                </select>
-            </li>
-            <li>
-                <button id="deleteAnnotation" title="Удалить все аннотации с кадра">
-                    <img src="{{ url_for('static', path='/images/deleteAnnotation.png') }}" class="instrumentImage">
-                </button>
-            </li>
-            <li>
-                <button id="cancelAnnotation" title="Удалить последнюю аннотацию выбранного класса">
-                    <img src="{{ url_for('static', path='/images/cancelAnnotation.png') }}" class="instrumentImage">
-                </button>
-            </li>
-            <li>
-                <button id="finishAnnotation" title="Завершить аннотирование">
-                    <img src="{{ url_for('static', path='/images/finishAnnotation.png') }}" class="instrumentImage">
-                </button>
-            </li>
-            <li>
-                <button id="submitAnnotation" title="Создать датасет">
-                    <img src="{{ url_for('static', path='/images/submitAnnotation.png') }}" class="instrumentImage">
-                </button>
-            </li>
-        </ul>
-    </div>
-    <div class="containerAnnotation">
-        <div class="videoAnnotation">
-            <video id="video" controls></video>
-            <canvas id="canvas"></canvas>
-            <!-- Добавляем изображение гифки с загрузкой на страницу -->
-            <div id="loading-gif"">
-                <img src=" {{ url_for('static', path='/images/loading.gif' ) }}" alt="Loading...">
-            </div>
-            <div id="modal" class="hidden">
-                <form id="annotationForm">
-                    <label for="className">Название класса аннотируемых объектов:</label>
-                    <input type="text" id="className">
-                    <button type="submit">Добавить</button>
-                    <button type="button" id="closeButton">Закрыть</button>
-                </form>
-            </div>
-        </div>
-        <div id="sliderContainer">
-            <div id="imageSlider">
-            </div>
-        </div>
-    </div>
+
 </div>
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <script type="module" src="{{ url_for('static', path='/js/script_main.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.4/markdown-it.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 {% endblock %}

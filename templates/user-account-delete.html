@@ -1,0 +1,12 @@
+{% extends 'user-autentification-base.html' %}
+
+{% block autentification %}
+<h2>Удаление аккаунта</h2>
+<form class="delete-account-form">
+    <div class="input-container">
+        <h3>Вы уверены, что хотите удалить свой аккаунт?</h3>
+    </div>
+    <button type="submit">Да</button>
+</form>
+<a href="/users/account" class="register-link">Вернуться</a>
+{% endblock %}

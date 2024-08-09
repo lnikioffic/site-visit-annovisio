@@ -1,0 +1,23 @@
+{% extends 'company-base.html' %}
+
+{% block content %}
+<h1>Профиль</h1>
+<div class="profile">
+    <div class="narrow left-section">
+        <ul class="menu">
+            <a href="/users/account" class="my-link" class="protected-link" title="Личный кабинет">
+                <li class="menu-item">Учетная запись</li>
+            </a>
+            <a href="/users/datasets" class="my-link users-datasets" class="protected-link" title="Мои датасеты">
+                <li class="menu-item">Мои датасеты</li>
+            </a>
+            <a href="/users/security" class="my-link" class="protected-link" title="Безопасность">
+                <li class="menu-item">Безопасность</li>
+            </a>
+        </ul>
+    </div>
+    <div class="profile-info">{% block profile %} {% endblock %}</div>
+
+</div>
+<script type="module" src="{{ url_for('static', path='/js/script_register_login.js') }}"></script>
+{% endblock %}

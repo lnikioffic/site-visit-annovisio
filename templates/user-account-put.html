@@ -1,0 +1,17 @@
+{% extends 'user-autentification-base.html' %}
+
+{% block autentification %}
+<h2>Изменение информации</h2>
+<form class="change-account-form">
+    <div class="input-container">
+        <input type="text" id="nickname" name="nickname" required>
+        <label for="login">Никнейм</label>
+    </div>
+    <div class="input-container">
+        <input type="text" id="login" name="login" required>
+        <label for="login">Email</label>
+    </div>
+    <button type="submit">Изменить</button>
+</form>
+<a href="/users/account" class="register-link">Вернуться</a>
+{% endblock %}

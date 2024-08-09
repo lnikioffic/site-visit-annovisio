@@ -1,0 +1,56 @@
+{% extends 'company-base.html' %} {% block content %}
+<div class="dataset-functional">
+  <h1>Датасеты</h1>
+  <form class="search-form">
+    <input type="text" placeholder="Введите название" />
+    <select>
+      <option value="all">Все категории</option>
+      <option value="category1">Категория 1</option>
+      <option value="category2">Категория 2</option>
+      <option value="category3">Категория 3</option>
+    </select>
+    <button type="submit">
+      <img
+        src="{{ url_for('static', path='/images/search.png') }}"
+        alt="Search"
+      />
+    </button>
+  </form>
+</div>
+<div class="datasets-grid">
+  {% for dataset in datasets %}
+  <div class="dataset">
+    <a href="/dataset/{{ dataset.id }}">
+      <img
+        src="{{ image_url }}{{ dataset.first_frame }}"
+        alt="{{ dataset.name }}"
+      />
+      <h3>Название: {{ dataset.name }}</h3>
+      <p>Цена: {{ dataset.price }}$</p>
+    </a>
+  </div>
+  {% endfor %}
+</div>
+<div class="pages">
+  <a
+    href="/datasets/{{ paginator.prev_num }}"
+    class="prev {% if not paginator.has_prev %} disabled {% endif %}"
+    >&laquo;</a
+  >
+
+  {% for page in paginator.page_range %} {% if page == paginator.page %}
+  <span class="current">{{ page }}</span>
+  {% elif page == 1 or page == paginator.pages or (page >= paginator.page - 2
+  and page <= paginator.page + 2) %}
+  <a href="/datasets/{{ page }}" class="num">{{ page }}</a>
+  {% elif page == paginator.page - 3 %}
+  <span class="dots">...</span>
+  {% elif page == paginator.page + 3 %}
+  <span class="dots">...</span>
+  {% endif %} {% endfor %} {% if paginator.has_next %}
+  <a href="/datasets/{{ paginator.next_num }}" class="next">&raquo;</a>
+  {% else %}
+  <span class="next disabled">&raquo;</span>
+  {% endif %}
+</div>
+{% endblock %}

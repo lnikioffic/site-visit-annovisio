@@ -1,0 +1,24 @@
+{% extends 'user-profile-base.html' %}
+
+{% block profile %}
+<div class="wide right-section-bank">
+    <div class="bank-cards">
+        <h2>Вход в систему</h2>
+        <div class="security-card">
+            <div class="bank-card-info">
+                <h3>Уведомления о входе</h3>
+                <p>Подключены уведомления на почту о каждом входе {{ user.email }}</p>
+                <a href="/users/account-put" class="change-btn">
+                    Изменить Email
+                </a>
+            </div>
+            <div>
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider round"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

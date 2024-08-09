@@ -1,0 +1,21 @@
+{% extends 'user-autentification-base.html' %}
+
+{% block autentification %}
+<h2>Добавление счета</h2>
+<form class="account-form">
+    <div class="input-container">
+        <input type="text" id="card" name="card" required>
+        <label for="card">Номер счета</label>
+    </div>
+    <div class="input-container">
+        <input type="text" id="FIO" name="FIO" required>
+        <label for="FIO">Имя владельца счета</label>
+    </div>
+    <div class="input-container">
+        <input type="date" id="monthYearInput" name="monthYearInput" pattern="\d{4}-\d{2}">
+        <label for="card">Дата окончания обслуживания</label>
+    </div>
+    <button type="submit">Добавить</button>
+</form>
+<a href="/users/cards-accounts" class="register-link">Вернуться</a>
+{% endblock %}

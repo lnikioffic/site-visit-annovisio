@@ -1,0 +1,30 @@
+{% extends 'user-profile-base.html' %}
+
+{% block profile %}
+<div class="wide right-section-datasets">
+    <div class="dataset-functional">
+        <h1>Мои датасеты</h1>
+        <form class="search-form">
+            <input type="text" placeholder="Введите название">
+            <select>
+                <option value="all">Все категории</option>
+                <option value="category1">Категория 1</option>
+                <option value="category2">Категория 2</option>
+                <option value="category3">Категория 3</option>
+            </select>
+            <button type="submit"><img src="{{ url_for('static', path='/images/search.png') }}" alt="Search"></button>
+        </form>
+    </div>
+    <div class="datasets-grid">
+        {% for dataset in datasets %}
+        <div class="dataset">
+            <a href="/users/dataset/{{ dataset.id }}">
+                <img src="{{ image_url }}{{ dataset.first_frame }}" alt="{{ dataset.name }}">
+                <h3>Название: {{ dataset.name }}</h3>
+            </a>
+            <a href="{{ dataset.file_path }}" download="{{ dataset.name }}.zip" class="download-btn">Скачать</a>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

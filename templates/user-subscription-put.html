@@ -1,0 +1,16 @@
+{% extends 'user-autentification-base.html' %}
+
+{% block autentification %}
+<h2>Изменение уровня подписки</h2>
+<form class="change-account-form">
+    <select class="select-container">
+        <option>Выберите уровень подписки</option>
+        <option>Базовый</option>
+        <option>Средний</option>
+        <option>Максимальный</option>
+    </select>
+    <div class="info-container">Условия выбранной подписки</div>
+    <button type="submit">Изменить</button>
+</form>
+<a href="/user-subscriptions" class="register-link">Вернуться</a>
+{% endblock %}

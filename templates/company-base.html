@@ -1,65 +1,110 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', path='/css/style.css') }}"
+    />
+  </head>
 
-<head>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/css/style.css') }}">
-</head>
-
-<body id="drop-area">
-    <header>Тестовая платформа <img src="{{ url_for('static', path='/images/logoHeader.png') }}" class="logoHeader"
-            alt="О компании"></header>
+  <body id="drop-area">
+    <header>
+      Тестовая платформа
+      <img
+        src="{{ url_for('static', path='/images/logoHeader.png') }}"
+        class="logoHeader"
+        alt="О компании"
+      />
+    </header>
     <nav>
-        <ul>
-            <li><a href="/company-about" title="О компании">
-                    <img src="{{ url_for('static', path='/images/logo.png') }}" class="logo" alt="О компании"></a></li>
-            <li><a href="/datasets/1" title="Датасеты">
-                    <img src="{{ url_for('static', path='/images/datasets.png') }}" class="navImages"
-                        alt="Каталог датасетов"></a>
-            </li>
-            <li><a href="/video/annotation-photo" title="Аннотация фото">
-                    <img src="{{ url_for('static', path='/images/photo-annotation.png') }}" class="navImages"
-                        alt="Аннотация фото"></a>
-            </li>
-            <li><a href="/video/annotation-video" title="Аннотация видео">
-                    <img src="{{ url_for('static', path='/images/video-annotation.png') }}" class="navImages"
-                        alt="Аннотация видео"></a>
-            </li>
-            <li><a href="/users/cart" title="Корзина">
-                    <img src="{{ url_for('static', path='/images/cart.png') }}" class="navImages" alt="Корзина"></a>
-            </li>
-        </ul>
-        <a href="/users/profile" class="nav-profile-icon protected-link" id="profile" title="Личный кабинет">
-            <img src="{{ url_for('static', path='/images/profile.png') }}" class="navImages" alt="Личный кабинет"></a>
+      <ul>
+        <li>
+          <a href="/" title="О компании">
+            <img
+              src="{{ url_for('static', path='/images/logo.png') }}"
+              class="logo"
+              alt="О компании"
+          /></a>
+        </li>
+        <li>
+          <a href="/datasets/1" title="Датасеты">
+            <img
+              src="{{ url_for('static', path='/images/datasets.png') }}"
+              class="navImages"
+              alt="Каталог датасетов"
+          /></a>
+        </li>
+        <li>
+          <a href="/video/annotation-photo" title="Аннотация фото">
+            <img
+              src="{{ url_for('static', path='/images/photo-annotation.png') }}"
+              class="navImages"
+              alt="Аннотация фото"
+          /></a>
+        </li>
+        <li>
+          <a href="/video/annotation-video" title="Аннотация видео">
+            <img
+              src="{{ url_for('static', path='/images/video-annotation.png') }}"
+              class="navImages"
+              alt="Аннотация видео"
+          /></a>
+        </li>
+        <li>
+          <a href="/users/cart" title="Корзина">
+            <img
+              src="{{ url_for('static', path='/images/cart.png') }}"
+              class="navImages"
+              alt="Корзина"
+          /></a>
+        </li>
+      </ul>
+      <a
+        href="/users/profile"
+        class="nav-profile-icon protected-link"
+        id="profile"
+        title="Личный кабинет"
+      >
+        <img
+          src="{{ url_for('static', path='/images/profile.png') }}"
+          class="navImages"
+          alt="Личный кабинет"
+      /></a>
     </nav>
 
-    <div class="content">
-        {% block content %} {% endblock %}
-    </div>
+    <div class="content">{% block content %} {% endblock %}</div>
 
     <div class="footer">
-        <div class="footer-container1">
-            <p><a href="/users/profile" class="protected-link">Личный кабинет</a></p>
-            <p><a href="/auth/registration">Регистрация</a></p>
-            <p><a href="/user-help">Помощь</a></p>
+      <div class="footer-container1">
+        <p>
+          <a href="/users/profile" class="protected-link">Личный кабинет</a>
+        </p>
+        <p><a href="/auth/registration">Регистрация</a></p>
+        <p><a href="/user-help">Помощь</a></p>
+      </div>
+      <div class="footer-container2">
+        <p><a href="/company-about">О компании</a></p>
+        <p><a href="/company-cooperation">Сотрудничество</a></p>
+        <img
+          src="{{ url_for('static', path='/images/logoFooter.png') }}"
+          class="logoFooter"
+          alt="О компании"
+        />
+      </div>
+      <div class="footer-container3">
+        <div>
+          <p>Платформа разработана при поддержке:</p>
         </div>
-        <div class="footer-container2">
-            <p><a href="/company-about">О компании</a></p>
-            <p><a href="/company-cooperation">Сотрудничество</a></p>
-            <img src="{{ url_for('static', path='/images/logoFooter.png') }}" class="logoFooter" alt="О компании">
-        </div>
-        <div class="footer-container3">
-            <div>
-                <p>Платформа разработана при поддержке:</p>
-            </div>
-            <a href="https://fasie.ru/m/" target="_blank">
-                <img src="{{ url_for('static', path='/images/fond.png') }}" class="fond-logo">
-            </a>
-        </div>
-
+        <a href="https://fasie.ru/m/" target="_blank">
+          <img
+            src="{{ url_for('static', path='/images/fond.png') }}"
+            class="fond-logo"
+          />
+        </a>
+      </div>
     </div>
-
-</body>
-<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-
+  </body>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 </html>

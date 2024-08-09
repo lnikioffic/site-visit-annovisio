@@ -51,7 +51,6 @@ header {
 }
 
 .footer-container2 {
-    border-right: 1px solid #f2f2f2;
     border-left: 1px solid #f2f2f2;
     padding: 0px 5% 0px 5%;
 }
@@ -67,7 +66,7 @@ nav {
     top: 0;
     background-color: #1f1f1f;
     color: #fff;
-    padding: 20px;
+    padding: 0px 20px 0px 20px;
     display: inline-flex;
     width: auto;
     flex-direction: column;
@@ -100,7 +99,7 @@ nav ul li a {
 
 .logo {
     width: 70px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     border-radius: 5px;
 }
 
@@ -765,8 +764,11 @@ a {
 }
 
 .videoAnnotation {
-    width: 100%;
-    flex: 2;
+    width: 60%;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-top: 20px;
+    padding: 20px;
 }
 
 .bank-cards,
@@ -1141,4 +1143,135 @@ input:checked+.slider:before {
 .pages .disabled {
     opacity: 0.5;
     pointer-events: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 24px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.75em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 0.875em;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 16px;
+}
+
+a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+pre {
+    position: relative;
+    background-color: #f6f8fa;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    padding: 16px;
+    overflow: auto;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875em;
+    line-height: 1.5;
+    display: flex;
+    gap: 10%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+code {
+    background-color: #f6f8fa;
+    border-radius: 3px;
+    padding: 2px 4px;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-size: 0.875em;
+}
+
+blockquote {
+    margin: 0 0 16px;
+    padding: 0 15px;
+    border-left: 4px solid #d1d5da;
+    color: #6a737d;
+}
+
+ul,
+ol {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+hr {
+    margin: 24px 0;
+    border: 0;
+    border-top: 1px solid #d1d5da;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-bottom: 16px;
+}
+
+th,
+td {
+    padding: 8px 12px;
+    border: 1px solid #d1d5da;
+    text-align: left;
+}
+
+th {
+    background-color: #f6f8fa;
+    font-weight: 600;
+}
+
+.copy-button {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.875em;
+}
+
+.copy-button:hover {
+    background-color: #0579f2;
 }

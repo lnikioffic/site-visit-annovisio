@@ -1,0 +1,24 @@
+networks:
+  my-network:
+
+services:
+  nginx:
+    container_name: ng
+    image: nginx:alpine
+    ports:
+      - 8080:8080
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf'
+    depends_on:
+      - app
+    networks:
+      - my-network
+
+  app:
+    container_name: app
+    build: 
+      context: .
+    expose:
+      - 8000
+    networks:
+      - my-network

@@ -1,10 +1,17 @@
-{% extends 'company-base.html' %}
-
-{% block content %}
-<div class="videoAnnotation">
-
+{% extends 'company-base.html' %} {% block content %}
+<div>
+  <h3>
+    Гит-хаб самого проекта:
+    <a href="https://github.com/lnikioffic/VisionDataForge"
+      >https://github.com/lnikioffic/VisionDataForge</a
+    >
+  </h3>
 </div>
-<script type="module" src="{{ url_for('static', path='/js/script_main.js') }}"></script>
+<div class="videoAnnotation"></div>
+<script
+  type="module"
+  src="{{ url_for('static', path='/js/script_main.js') }}"
+></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/markdown-it/12.0.4/markdown-it.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 {% endblock %}

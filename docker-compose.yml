@@ -13,7 +13,7 @@ services:
 
   app:
     container_name: app
-    build: 
+    build:
       context: .
     expose:
       - 8000
